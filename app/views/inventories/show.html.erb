@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @inventory.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @inventory.price %>
+</p>
+
+<%= link_to 'Edit', edit_venue_inventory_path(@venue, @inventory) %> |
+<%= link_to 'Back', venue_inventories_path %>

@@ -1,0 +1,27 @@
+<h1>New Inventory</h1>
+<%= form_for @inventory, url: {action: "create"} do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+<div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :venue %>
+  <%= f.collection_select :venue_id, Venue.order(:name), 
+    :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :category %>
+ <%= f.collection_select :category_id, Category.order(:name), 
+    :id, :name %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
